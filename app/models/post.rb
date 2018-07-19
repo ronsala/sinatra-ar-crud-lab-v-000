@@ -3,10 +3,11 @@ class Post < ActiveRecord::Base
 
   @@all = []
 
-  def initialize(name, content)
+  def create(name:, content:)
     @name = name
     @content = content
     @all << self
+    binding.pry
   end
 
   def all
