@@ -3,11 +3,14 @@ class Post < ActiveRecord::Base
 
   @@all = []
 
-  def create(name:, content:)
-    @name = name
-    @content = content
-    @all << self
-    binding.pry
+  # def create(params)
+  def initialize(params)
+    # binding.pry
+    @name = params[:name]
+    @content = params[:content]
+    # binding.pry
+    @@all << self
+    # binding.pry
   end
 
   def all
