@@ -1,19 +1,19 @@
 class Post < ActiveRecord::Base
   attr_reader :name, :content
 
-  @@all = []
+  @all = []
 
   # def create(params)
-  def initialize(params)
+  def create(params)
     # binding.pry
     @name = params[:name]
     @content = params[:content]
-    # binding.pry
-    @@all << self
+    binding.pry
+    @all << self
     # binding.pry
   end
 
   def all
-    @@all
+    @all
   end
 end
