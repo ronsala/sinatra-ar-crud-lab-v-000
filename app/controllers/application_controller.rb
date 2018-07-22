@@ -27,8 +27,12 @@ class ApplicationController < Sinatra::Base
 
   get '/posts' do
     @posts = Post.all
-    @name = params[:name]
-    @content = params[:content]
+    @posts.each do
+      @id = @posts.id
+      @name = @posts.name
+      @content = @posts.content
+    end
+
     erb :index
   end
 
