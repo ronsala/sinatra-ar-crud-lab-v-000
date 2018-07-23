@@ -21,7 +21,6 @@ class ApplicationController < Sinatra::Base
   post '/posts' do
     @post = Post.create(params)
     @posts = Post.all
-    # binding.pry
     redirect to '/posts'
   end
 
@@ -47,7 +46,6 @@ class ApplicationController < Sinatra::Base
     @post = Post.find_by_id(params[:id])
     @post.name = params[:name]
     @post.content = params[:content]
-    # binding.pry
     @post.save
     redirect to "/posts/#{@post.id}"
   end
